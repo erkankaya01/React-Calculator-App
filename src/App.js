@@ -92,6 +92,8 @@ function reducer(state, { type, payload }) {
         operation: null,
         currentOperand: evaluate(state),
       }
+      default:
+        //end of the switch
   }
 }
 
@@ -113,7 +115,12 @@ function evaluate({ currentOperand, previousOperand, operation }) {
     case "÷":
       computation = prev / current
       break
+    
+      default:
+        //end of the switch
     }
+
+    
   return computation.toString()
 }
 
